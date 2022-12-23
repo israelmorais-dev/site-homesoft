@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: intro;
-    src: url(../font/intro/Intro\ Regular\ Alt\ Regular.otf);
+    src: url(../fonts/intro/Intro\ Regular\ Alt\ Regular.otf);
 }
 
 *{
-    margin: 0px;
+    margin: 0px auto;
     padding: 0px;
     box-sizing: border-box;
     max-width: 100vw;
@@ -25,41 +25,86 @@
     --font-default:'Montserrat', sans-serif;
     --font-default-h1:'intro', sans-serif;
 }
-
-/*-------------READER--------------*/
+/*-------------READER START--------------*/
 header{
     background-color: var(--color-blue-dark);
     padding-top: 30px;
-}
-header li{
-    text-decoration: none;
-    list-style: none; 
-    display: inline-block;
-    font-family: var(--font-default);
-    font-weight: 600;
-    color: #fff;
-    padding: 18px;
 }
 nav{
     justify-content: space-around;
     display: flex;
 }
-/*-------------LANDING PAGE--------------*/
-
-main section#landing-page{
-    height: 100vh;
-    background-color: var(--color-blue-dark);
+header nav ul a{
+    text-decoration: none;
+    list-style: none;
+    color: #ffffff;
+    font-weight: 550;
+    font-family: var(--font-default);
 }
-main section#landing-page h1{
-    font-size: 60px;
+header nav li{
+    display: inline-block;
+    margin: 20px;
+}
+header nav a:hover{
+    color: var(--color-orange);
+    transition: 0.5s all;
+}
+#btn-nav-contato{
+    padding: 8px;
+    border: 2px solid var(--color-orange);
+    border-radius: 15px;
+}
+#btn-nav-contato:hover{
+    color: #ffffff;
+    background-color: var(--color-orange);
+    transition: 0.5s all;
+}
+/*-------------READER END--------------*/
+
+/*-------------LANDING PAGE START--------------*/
+main div#landing-page{
+  padding: 85px 130px 0px 130px;
+  height: 86vh;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-blue-dark);
+}
+aside#landing-page-text h1{
+    padding-top: 90px;
+    font-size: 50px;
     font-family: var(--font-default-h1);
     color: var(--color-orange);
 }
-main section#landing-page p{
-    font-size: 20px;
+aside#landing-page-text p{
+    padding: 15px 0px;
+    font-size: 15px;
     font-family: var(--font-default-h1);
-    color: var(--color-orange-clear);
+    color: #e0e0e0e5;
 }
+#btn-landing-page-contact {
+    border: none;
+    font-family: var(--font-default);
+    text-decoration: none;
+    list-style: none;
+    padding: 12px;
+    border-radius: 6px;
+    width: 200px;
+    font-size: 14px;
+    background-color: var(--color-blue-clear);
+    color: var(--color-black-clear);
+    font-weight: 700;
+}
+#btn-landing-page-contact:hover{
+    color: #ffffff;
+    background-color: var(--color-orange);
+    transition: 0.5s all;
+}
+article#landing-page-img img{
+    width: 550px;
+}
+/*-------------LANDING PAGE END--------------*/
+
 /*-------------MAIN--------------*/
 main section.font-h1{
     font-family: var(--font-default-h1);
@@ -74,10 +119,22 @@ main section#we-did{
     color: var(--color-orange);
     height: 400px;
 }
+/*-------------INFORMATION WE DO--------------*/
+
+main #information{
+    max-width: 1040px;
+    margin: auto;
+}
+main section#information {
+    max-width: 1000px;
+    margin: auto;
+}
 /*-------------FOOTER--------------*/
  footer{
     background-color: var(--color-black-clear);
     height: 200px;
+    text-align: center;
+    padding-top: 40px;
  }
  footer li{
     text-decoration: none;
@@ -86,4 +143,14 @@ main section#we-did{
     font-family: var(--font-default);
     font-weight: 600;
     color: #fff;
+    padding: 18px;
+}
+a:hover{
+    color: var(--color-orange);
+    transition: .5s all;
+}
+footer p{
+    color: #fff;
+    font-family: var(--font-default);
+    padding-top: 20px;
 }
