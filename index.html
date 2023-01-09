@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/index-style.css">
     <title>Homesoft - Soluções Digitais</title>
     <script src="https://kit.fontawesome.com/330fb07883.js" crossorigin="anonymous"></script>
+    <link href="javascript/project.js">
 </head>
 <body>
     <header>
@@ -17,7 +18,7 @@
             <ul>
                 <a href="#we-do-h1" ><li>o que fazemos</li></a>
                 <a href="#we-did"><li>o que fizemos</li></a>
-                <a href="pages/contact.html" id="btn-nav-contato"><li>Faça um orçamento</li></a>
+                <a href="#contact" id="btn-nav-contato"><li>Faça um orçamento</li></a>
             </ul>
         </nav>
     </header>
@@ -26,7 +27,7 @@
             <aside id="landing-page-text">
                 <h1>Soluções Digitais</h1>
                 <p>Tiramos seu sonho do papel, e te lançamos no futuro</p>
-                <a href="pages/contact.html" id="btn-landing-page-contact">Faça um orçamento</a>
+                <a href="#contact" id="btn-landing-page-contact">Faça um orçamento</a>
             </aside>
             <article id="landing-page-img" >
                 <img src="images/img-langin-page.png" alt="">
@@ -34,6 +35,7 @@
         </div>
         <div id="information">
             <h1 id="we-do-h1">o que fazemos</h1>
+            <span class="border-right-1"></span>
             <section id="we-do">
                 <div id="web" class="we-do-c">
                     <i class="fa-solid fa-laptop-code"></i>
@@ -52,28 +54,48 @@
                 </div>
                 <div id="desing" class="we-do-c">
                     <i class="fa-solid fa-pen-nib"></i>
-                    <h2>Desenvolvimento desing</h2>
+                    <h2>Desing</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores accusantium harum voluptate alias vel quisquam animi consequatur au</p>
                 </div>
             </section>
-            <h1>o que fizemos</h1>
             <section id="we-did">
-                <div id="we-did-info">
-                    <div id="we-did-info-text">
-                        <h3>
-                            Titulo do projeto
-                        </h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequur, quasi mollitia delectus saepe accusamus, labore blanditiis</p>
-                    </div>
-                    <div>
-                        <article>
-                            <img src="" alt="">
-                        </article>
-                    </div>
+                <h1>o que fizemos</h1>
+                <span class="border-right-1"></span>
+                 <div class="tab">
+                    <button id="tabStandard" class="tab-button" onclick="openTab(event, 'proj-Web')">Desenvolvimento web</button>
+                    <button class="tab-button" 
+                     onclick="openTab(event, 'proj-Mobile')">Desenvolvimento mobile</button>
+                    <button class="tab-button" 
+                     onclick="openTab(event, 'proj-ecommece')">Desenvolvimento e-commece</button>
+                    <button class="tab-button" 
+                     onclick="openTab(event, 'proj-desing')">Desing</button>
+                 </div>
+                 <div class="tab-h2">
+                    <h2>Último Projeto</h2>
+                 </div>
+                 <div id="proj-Web" class="contents">
+                    <h3>Nome do Projeto web</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates obcaecati ex nulla, saepe non unde facere velit optio, quod voluptatem! Praesentium vel voluptatem ratione asperiores dolorum aperiam dignissimos reiciendis.</p>
+                    <img src="" alt=""> 
                 </div>
+                 <div id="proj-Mobile" class="contents">
+                    <h3>Nome do Projeto mobile</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates obcaecati ex nulla, saepe non unde facere velit optio, quod voluptatem! Praesentium vel voluptatem ratione asperiores dolorum aperiam dignissimos reiciendis.</p>
+                <img src="" alt=""> 
+                 </div>
+                 <div id="proj-ecommece" class="contents">
+                    <h3>Nome do Projeto ecommece</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates obcaecati ex nulla, saepe non unde facere velit optio, quod voluptatem! Praesentium vel voluptatem ratione asperiores dolorum aperiam dignissimos reiciendis.</p>
+                    <img src="" alt=""> 
+                 </div>
+                 <div id="proj-desing" class="contents">
+                    <h3>Nome do Projeto desing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates obcaecati ex nulla, saepe non unde facere velit optio, quod voluptatem! Praesentium vel voluptatem ratione asperiores dolorum aperiam dignissimos reiciendis.</p>
+                    <img src="" alt=""> 
+                 </div>
             </section>
             <section>
-                <h1>contato</h1>
+                <h1 id="contact">contato</h1>
             </section>
         </div>
     </main>
@@ -87,8 +109,23 @@
             <a href="#"><li>Faça um orçamento</li></a>
         </ul>
         <div id="baseboard">
-            <p>Homesoft - Soluções Digitais - Todos os direitos reservados. 2022</p>
+            <p>Homesoft - Soluções Digitais - Todos os direitos reservados. 2023</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('tabStandard').click();
+        function openTab(event, idTab){
+            var  content = document.getElementsByClassName('contents')
+            for (var i = 0; i < content.length; i++){
+                content[i].style.display = 'none';
+            }
+            var tabs = document.getElementsByClassName ('tab-button');
+            for (var i = 0; i < tabs.length; i++){
+                tabs[i].className = tabs[i].className.replace('active', '');
+            }
+            document.getElementById(idTab).style.display = 'block';
+            event.currentTarget.className += ' active';
+        }
+    </script>
 </body>
 </html>
